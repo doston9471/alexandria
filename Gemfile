@@ -54,3 +54,4 @@ group :test do
   gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
 end
 
+gem 'kaminari', '~> 1.2', '>= 1.2.2'

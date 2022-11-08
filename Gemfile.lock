@@ -99,6 +99,18 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -199,6 +211,7 @@ DEPENDENCIES
   database_cleaner (~> 2.0, >= 2.0.1)
   debug
   factory_bot_rails (~> 6.2)
+  kaminari (~> 1.2, >= 1.2.2)
   puma (~> 5.0)
   rails (~> 7.0.4)
   rspec-rails (~> 6.0, >= 6.0.1)
