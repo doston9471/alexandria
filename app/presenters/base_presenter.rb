@@ -32,4 +32,12 @@ class BasePresenter
     @data
   end
 
+  def fields
+    FieldPicker.new(self).pick
+  end
+
+  def embeds
+    EmbedPicker.new(self).embed
+  end
+
 end
