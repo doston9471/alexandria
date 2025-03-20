@@ -1,7 +1,6 @@
 # app/serializers/alexandria/serializer.rb
 module Alexandria
   class Serializer
-
     def initialize(data:, params:, actions:, options: {})
       @data = data
       @params = params
@@ -30,6 +29,5 @@ module Alexandria
     def presenter(entity)
       @presenter ||= "#{entity.class}Presenter".constantize
     end
-
   end
 end

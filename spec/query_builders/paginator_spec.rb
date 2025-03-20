@@ -2,11 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe Paginator do
-
   let(:ruby_microscope) { create(:ruby_microscope) }
   let(:rails_tutorial) { create(:ruby_on_rails_tutorial) }
   let(:agile_web_dev) { create(:agile_web_development) }
-  let(:books) { [ruby_microscope, rails_tutorial, agile_web_dev] }
+  let(:books) { [ ruby_microscope, rails_tutorial, agile_web_dev ] }
 
   let(:scope) { Book.all }
   let(:params) { { 'page' => '1', 'per' => '2' } }

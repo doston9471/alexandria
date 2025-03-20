@@ -2,7 +2,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Books', type: :request do
-
   # one let for each book factory. Here we use 'create' instead
   # of 'build' because we need the data persisted. Those two methods
   # are provided by Factory Girl.
@@ -11,7 +10,7 @@ RSpec.describe 'Books', type: :request do
   let(:agile_web_dev) { create(:agile_web_development) }
 
   # Putting them in an array make it easier to create them in one line
-  let(:books) { [ruby_microscope, rails_tutorial, agile_web_dev] }
+  let(:books) { [ ruby_microscope, rails_tutorial, agile_web_dev ] }
 
   describe 'GET /api/books' do
     # Before any test, let's create our 3 books
@@ -39,7 +38,7 @@ RSpec.describe 'Books', type: :request do
 
         it 'gets books with only the id, title and author_id keys' do
           json_body['data'].each do |book|
-            expect(book.keys).to eq ['id', 'title', 'author_id']
+            expect(book.keys).to eq [ 'id', 'title', 'author_id' ]
           end
         end
       end
@@ -72,14 +71,13 @@ RSpec.describe 'Books', type: :request do
     end
 
     describe 'embed picking' do
-
       context "with the 'embed' parameter" do
         before { get '/api/books?embed=author' }
 
         it 'gets the books with their authors embedded' do
           json_body['data'].each do |book|
             expect(book['author'].keys).to eq(
-              ['id', 'given_name', 'family_name', 'created_at', 'updated_at']
+              [ 'id', 'given_name', 'family_name', 'created_at', 'updated_at' ]
             )
           end
         end
@@ -201,6 +199,5 @@ RSpec.describe 'Books', type: :request do
         end
       end
     end
-
   end
 end

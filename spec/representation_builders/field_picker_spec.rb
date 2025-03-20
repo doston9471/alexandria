@@ -16,7 +16,7 @@ RSpec.describe 'FieldPicker' do
   # the tests in this file
   before do
     allow(BookPresenter).to(
-      receive(:build_attributes).and_return(['id', 'title', 'author_id'])
+      receive(:build_attributes).and_return([ 'id', 'title', 'author_id' ])
     )
   end
 

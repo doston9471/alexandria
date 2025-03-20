@@ -1,10 +1,9 @@
 # app/query_builders/paginator.rb
 class Paginator
-
   def initialize(scope, query_params, url)
     @query_params = query_params
-    @page = validate_param!('page', 1)
-    @per = validate_param!('per', 10)
+    @page = validate_param!("page", 1)
+    @per = validate_param!("per", 10)
     @scope = scope.page(@page).per(@per)
     @url = url
   end
@@ -15,7 +14,7 @@ class Paginator
 
   def links
     @links ||= pages.each_with_object([]) do |(k, v), links|
-      query_params = @query_params.merge({ 'page' => v, 'per' => @per }).to_param
+      query_params = @query_params.merge({ "page" => v, "per" => @per }).to_param
       links << "<#{@url}?#{query_params}>; rel=\"#{k}\""
     end.join(", ")
   end
@@ -24,7 +23,7 @@ class Paginator
 
   def validate_param!(name, default)
     return default unless @query_params[name]
-    unless (@query_params[name] =~ /\A\d+\z/)
+    unless @query_params[name] =~ /\A\d+\z/
       raise QueryBuilderError.new("#{name}=#{@query_params[name]}"),
       'Invalid Pagination params. Only numbers are supported for "page" and "per".'
     end
@@ -55,5 +54,4 @@ class Paginator
   def show_last_link?
     @scope.total_pages > 1 && !@scope.last_page?
   end
-
 end

@@ -6,7 +6,7 @@ RSpec.describe 'EmbedPicker' do
   let(:ruby_microscope) { create(:ruby_microscope, author_id: author.id) }
   let(:rails_tutorial) { create(:ruby_on_rails_tutorial, author_id: author.id) }
 
-  let(:params) { { } }
+  let(:params) { {} }
   let(:embed_picker) { EmbedPicker.new(presenter) }
 
   describe '#embed' do
@@ -15,7 +15,7 @@ RSpec.describe 'EmbedPicker' do
 
       before do
         allow(BookPresenter).to(
-          receive(:relations).and_return(['author'])
+          receive(:relations).and_return([ 'author' ])
         )
       end
 
@@ -54,7 +54,7 @@ RSpec.describe 'EmbedPicker' do
         before do
           ruby_microscope && rails_tutorial
           allow(AuthorPresenter).to(
-            receive(:relations).and_return(['books'])
+            receive(:relations).and_return([ 'books' ])
           )
         end
 

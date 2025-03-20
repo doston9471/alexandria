@@ -1,12 +1,11 @@
 # app/query_builders/filter.rb
 class Filter
-
-  PREDICATES = %w(eq cont notcont start end gt lt)
+  PREDICATES = %w[eq cont notcont start end gt lt]
 
   def initialize(scope, params)
     @scope = scope
     @presenter = "#{@scope.model}Presenter".constantize
-    @filters = params['q'] || {}
+    @filters = params["q"] || {}
   end
 
   def filter
@@ -24,8 +23,8 @@ class Filter
     @filters.each_with_object({}) do |(key, value), hash|
       hash[key] = {
         value: value,
-        column: key.split('_')[0...-1].join('_'),
-        predicate: key.split('_').last
+        column: key.split("_")[0...-1].join("_"),
+        predicate: key.split("_").last
       }
     end
   end
@@ -39,8 +38,8 @@ class Filter
   end
 
   def error!(key, data)
-    columns = @presenter.filter_attributes.join(',')
-    pred = PREDICATES.join(',')
+    columns = @presenter.filter_attributes.join(",")
+    pred = PREDICATES.join(",")
     raise QueryBuilderError.new("q[#{key}]=#{data[:value]}"),
     "Invalid Filter params. Allowed columns: (#{columns}), 'predicates': #{pred}"
   end
@@ -78,5 +77,4 @@ class Filter
   def lt(column, value)
     @scope.where("#{column} < ?", value)
   end
-
 end
