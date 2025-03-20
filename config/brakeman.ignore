@@ -1,0 +1,143 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "49fa3d782328cfb8373e0d8344751c6b4be23c1af9f4f3c047d8b1966492a6d2",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 70,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} LIKE ?\", \"%#{value}\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "end"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "55d786970e4b382a90b5033c9a3a3478a19d9a4d34798c8756068ee0fff721b1",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 74,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} > ?\", value)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "gt"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "7eae21bae517fddcc911e4b199c207e704072739afec4677cd77c99c56e3138f",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 58,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} LIKE ?\", \"%#{value}%\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "cont"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "9a7ec35f903c6692dc417d036915aa7dff81d61d2ab77dc610624cb08013b59b",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 62,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} NOT LIKE ?\", \"%#{value}%\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "notcont"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "c7f7412fba8385c0f265c8addb42f350f4b887455fd0d6842b5173c217f21cd3",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 78,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} < ?\", value)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "lt"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "ecca1db95d0c65c1002a04f7b36c0a1dd67bb3a8b87f1e5b92497f43c7d26ea7",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/query_builders/filter.rb",
+      "line": 66,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "send(data[:predicate], data[:column], data[:value]).where(\"#{column} LIKE ?\", \"#{value}%\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Filter",
+        "method": "start"
+      },
+      "user_input": "column",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.0.0"
+}
