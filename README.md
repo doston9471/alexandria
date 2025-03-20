@@ -1,24 +1,26 @@
-# README
+# Alexandria
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Complete e-commerce platform that sells… books!
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+1. Clone the repository
+2. Run `bundle install`
+3. Run `rails db:migrate`
+4. Run `rails server` or `bin/dev`
 
-* System dependencies
+## Linting
 
-* Configuration
+```bash
+bin/rubocop -A
+```
 
-* Database creation
+## Testing
 
-* Database initialization
+```bash
+bundle exec rspec
+```
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
