@@ -46,6 +46,10 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "brakeman"
+
+  gem "rubocop-rails-omakase", require: false
 end
 
 group :test do
@@ -55,5 +59,3 @@ group :test do
 end
 
 gem "kaminari", "~> 1.2", ">= 1.2.2"
-
-gem "rubocop-rails-omakase", require: false, group: [ :development ]
