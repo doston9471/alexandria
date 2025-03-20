@@ -53,7 +53,7 @@ group :development do
 end
 
 group :test do
-  gem "shoulda-matchers", "~> 5.2"
+  gem "shoulda-matchers", "~> 6.4"
   gem "webmock", "~> 3.18", ">= 3.18.1"
   gem "database_cleaner", "~> 2.0", ">= 2.0.1"
 end
