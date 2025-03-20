@@ -1,6 +1,5 @@
 # app/representation_builders/embed_picker.rb
 class EmbedPicker
-
   def initialize(presenter)
     @presenter = presenter
   end
@@ -20,7 +19,7 @@ class EmbedPicker
   def validate_embeds
     return [] if @presenter.params[:embed].blank?
 
-    embeds = @presenter.params[:embed].try(:split, ',') || []
+    embeds = @presenter.params[:embed].try(:split, ",") || []
     return [] unless embeds.any?
 
     embeds.each do |embed|
@@ -59,5 +58,4 @@ class EmbedPicker
       hash["#{r.name}"] = r
     end
   end
-
 end

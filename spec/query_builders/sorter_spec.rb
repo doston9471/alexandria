@@ -2,11 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe Sorter do
-
   let(:ruby_microscope) { create(:ruby_microscope) }
   let(:rails_tutorial) { create(:ruby_on_rails_tutorial) }
   let(:agile_web_dev) { create(:agile_web_development) }
-  let(:books) { [ruby_microscope, rails_tutorial, agile_web_dev] }
+  let(:books) { [ ruby_microscope, rails_tutorial, agile_web_dev ] }
 
   let(:scope) { Book.all }
   let(:params) { HashWithIndifferentAccess.new({ sort: 'id', dir: 'desc' }) }
@@ -15,7 +14,7 @@ RSpec.describe Sorter do
 
   before do
     allow(BookPresenter).to(
-      receive(:sort_attributes).and_return(['id', 'title'])
+      receive(:sort_attributes).and_return([ 'id', 'title' ])
     )
     books
   end
@@ -46,7 +45,5 @@ RSpec.describe Sorter do
         expect { sorted }.to raise_error(QueryBuilderError)
       end
     end
-
   end
-
 end

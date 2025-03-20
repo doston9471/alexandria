@@ -1,6 +1,5 @@
 # app/representation_builders/field_picker.rb
 class FieldPicker
-
   def initialize(presenter)
     @presenter = presenter
   end
@@ -23,7 +22,7 @@ class FieldPicker
     return pickable if @presenter.params[:fields].blank?
 
     fields = if !@presenter.params[:fields].blank?
-      @presenter.params[:fields].split(',')
+      @presenter.params[:fields].split(",")
     else
       []
     end
@@ -45,7 +44,7 @@ class FieldPicker
   end
 
   def error!(field)
-    build_attributes = @presenter.class.build_attributes.join(',')
+    build_attributes = @presenter.class.build_attributes.join(",")
     raise RepresentationBuilderError.new("fields=#{field}"),
     "Invalid Field Pick. Allowed field: (#{build_attributes})"
   end
@@ -53,5 +52,4 @@ class FieldPicker
   def pickable
     @pickable ||= @presenter.class.build_attributes
   end
-
 end

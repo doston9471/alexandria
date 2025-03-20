@@ -44,5 +44,4 @@ class BasePresenter
   def embeds
     EmbedPicker.new(self).embed
   end
-
 end
