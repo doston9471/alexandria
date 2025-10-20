@@ -171,7 +171,7 @@ GEM
       date
       stringio
     public_suffix (6.0.1)
-    puma (7.0.4)
+    puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.1)
@@ -305,7 +305,7 @@ DEPENDENCIES
   debug
   factory_bot_rails (~> 6.5)
   kaminari (~> 1.2, >= 1.2.2)
-  puma (~> 7.0)
+  puma (~> 7.1)
   rails (~> 8.0)
   rspec-rails (~> 8.0)
   rubocop-rails-omakase
